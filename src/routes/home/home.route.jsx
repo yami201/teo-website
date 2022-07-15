@@ -1,22 +1,18 @@
 import { useState, useCallback, useContext } from "react";
-import { 
-    Grid, 
+import {
     Container,
-    HorizentalLine,
-    VerticalLine,
-    VerticalLinesContainer,
-    HorizentalLinesContainer,
     MeshContainer,
     InfosContainer,
     Name,
     Subtitle,
-    DiscoverButton,
     Paragraph,
     LanguageSelectorContainer,
     LanguageSelector,
-    ButtonBorder
 } from "./home.styles";
-import { LanguageContext } from "../../language.context"; 
+import { LanguageContext } from "../../language.context";
+import Grid from "../../components/grid/grid.component";
+import Button from "../../components/button/button.component";
+
 const Home = () => {
     const { currentLanguageIsEng,setCurrentLanguageIsEng } = useContext(LanguageContext)
     console.log(currentLanguageIsEng)
@@ -30,19 +26,7 @@ const Home = () => {
     
     return (
         <>
-            <Grid>
-                <VerticalLinesContainer state={buttonState}>
-                    <VerticalLine></VerticalLine>
-                    <VerticalLine></VerticalLine>
-                    <VerticalLine></VerticalLine>
-                    <VerticalLine></VerticalLine>
-                </VerticalLinesContainer>
-
-                <HorizentalLinesContainer state={buttonState}>
-                    <HorizentalLine></HorizentalLine>
-                    <HorizentalLine></HorizentalLine>
-                </HorizentalLinesContainer>
-            </Grid>
+            <Grid buttonState={buttonState}/>
             <Container>
                 <MeshContainer>
                     Mesh Goes Here
@@ -61,12 +45,11 @@ const Home = () => {
                     </LanguageSelectorContainer>
                     <Name>teo</Name>
                     <Subtitle>Lorem ipsum dolor sit,</Subtitle>
-                    <DiscoverButton
+                    <Button
                         onMouseOver={buttonHoveredHandler}
                         onMouseOut={buttonUnHoveredHandler}>
                         {currentLanguageIsEng ? 'discover':'décourvrir'}
-                        <ButtonBorder/>
-                    </DiscoverButton>
+                    </Button>
                     <Paragraph>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi, perspiciatis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, laudantium?</Paragraph>
                 </InfosContainer>
             </Container>
