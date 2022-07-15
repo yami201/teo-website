@@ -44,11 +44,11 @@ export const HorizentalLinesContainer = styled.div`
                 `
                     ${HorizentalLine}:first-child{
                         opacity:0.5;
-                        transform:translateY(29vh)
+                        transform:translateY(28.8vh)
                     }
                     ${HorizentalLine}:last-child{
                         opacity:0.5;
-                        transform:translateY(-14.3vh)
+                        transform:translateY(-14.2vh)
                     }
                 `
             )
@@ -72,7 +72,7 @@ export const VerticalLinesContainer = styled.div`
                 }
                 ${VerticalLine}:nth-child(4){
                     opacity:0.5;
-                    transform: translateX(-15.2vw);
+                    transform: translateX(-10.4vw);
                 }`
             )
         }
@@ -134,8 +134,8 @@ export const Subtitle = styled.p`
 `
 export const DiscoverButton = styled.button`
     transform: translateY(-50px);
-    width: 220px;
-    height: 55px;
+    width: 20vw;
+    height: 7vh;
     padding: 10px 0;
     text-transform: uppercase;
     letter-spacing: 1px;
