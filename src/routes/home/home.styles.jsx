@@ -44,11 +44,11 @@ export const HorizentalLinesContainer = styled.div`
                 `
                     ${HorizentalLine}:first-child{
                         opacity:0.5;
-                        transform:translateY(237px)
+                        transform:translateY(29vh)
                     }
                     ${HorizentalLine}:last-child{
                         opacity:0.5;
-                        transform:translateY(-117px)
+                        transform:translateY(-14.3vh)
                     }
                 `
             )
@@ -68,11 +68,11 @@ export const VerticalLinesContainer = styled.div`
             return  (
                 `${VerticalLine}:nth-child(3){
                     opacity:0.5;
-                    transform: translateX(-80px);
+                    transform: translateX(-5.5vw);
                 }
                 ${VerticalLine}:nth-child(4){
                     opacity:0.5;
-                    transform: translateX(-218px);
+                    transform: translateX(-15.2vw);
                 }`
             )
         }
