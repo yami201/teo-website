@@ -44,11 +44,11 @@ export const HorizentalLinesContainer = styled.div`
                 `
                     ${HorizentalLine}:first-child{
                         opacity:0.5;
-                        transform:translateY(28.8vh)
+                        transform:translateY(28.6vh)
                     }
                     ${HorizentalLine}:last-child{
                         opacity:0.5;
-                        transform:translateY(-14.2vh)
+                        transform:translateY(-14vh)
                     }
                 `
             )
@@ -68,7 +68,7 @@ export const VerticalLinesContainer = styled.div`
             return  (
                 `${VerticalLine}:nth-child(3){
                     opacity:0.5;
-                    transform: translateX(-5.5vw);
+                    transform: translateX(-5.6vw);
                 }
                 ${VerticalLine}:nth-child(4){
                     opacity:0.5;
@@ -136,7 +136,7 @@ export const DiscoverButton = styled.button`
     transform: translateY(-50px);
     width: 20vw;
     height: 7vh;
-    padding: 10px 0;
+    padding: 2vh 0;
     text-transform: uppercase;
     letter-spacing: 1px;
     font-size: 26px;
@@ -155,7 +155,7 @@ export const DiscoverButton = styled.button`
         position: absolute;
         border-style: solid;
         z-index: 0;
-        border-width: 275px 1100px 0 0;
+        border-width: 42vh 120vw 0 0;
         border-color: #1ba7de #18586f #000000 #000000;
         transition: 500ms ease-in-out;
 
