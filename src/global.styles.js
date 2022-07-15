@@ -9,6 +9,7 @@ const GlobalStyle = createGlobalStyle`
   body{
     color: white;
     background-color:  black;
+    font-family: 'Cormorant SC', serif;
   }
   a{
     text-decoration: none;
