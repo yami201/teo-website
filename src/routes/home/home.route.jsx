@@ -14,6 +14,7 @@ import {
     Paragraph,
     LanguageSelectorContainer,
     LanguageSelector,
+    ButtonBorder
 } from "./home.styles";
 import { LanguageContext } from "../../language.context"; 
 const Home = () => {
@@ -63,7 +64,8 @@ const Home = () => {
                     <DiscoverButton
                         onMouseOver={buttonHoveredHandler}
                         onMouseOut={buttonUnHoveredHandler}>
-                        <span>{currentLanguageIsEng ? 'discover':'décourvrir'}</span>
+                        {currentLanguageIsEng ? 'discover':'décourvrir'}
+                        <ButtonBorder/>
                     </DiscoverButton>
                     <Paragraph>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi, perspiciatis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, laudantium?</Paragraph>
                 </InfosContainer>
