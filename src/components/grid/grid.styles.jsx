@@ -1,6 +1,24 @@
-import styled, { css } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 
-
+const showStars = keyframes`
+    from{opacity:0;}
+    to{opacity:1;}
+`
+const showVerticalGrid = keyframes`
+    from{transform:scaleY(0)}
+    to{transform:scaleY(1)}
+`
+const showHorizentalGrid = keyframes`
+    from{transform:scaleX(0)}
+    to{transform:scaleX(1)}
+`
+export const StarsBackground = styled.div`
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    animation: ${showStars} 4s ease forwards;
+`
 const lineStyle = (vertical) => {
     const dimension = 
         vertical ? 
@@ -39,6 +57,8 @@ export const HorizentalLinesContainer = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    transform: scaleX(0);
+    animation: ${showHorizentalGrid} 4s ease forwards;
     ${({state}) => {
         if(state){
             return(
@@ -63,7 +83,8 @@ export const VerticalLinesContainer = styled.div`
     width: 100%;
     display: flex;
     justify-content: space-around;
-
+    transform: scaleY(0);
+    animation: ${showVerticalGrid} 4s ease forwards;
     ${({state}) => {
         if(state){
             return  (

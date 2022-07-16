@@ -8,9 +8,10 @@ import {
     Paragraph,
 } from "./home.styles";
 import { LanguageContext } from "../../language.context";
-import Grid from "../../components/grid/grid.component";
+import Background from "../../components/grid/grid.component";
 import Button from "../../components/button/button.component";
 import LanguageSelector from "../../components/languague-selector/language-selector.component";
+import HomeMeshContainer from "../../components/home-meshes-container/home-meshes-container.component";
 const Home = () => {
     const { currentLanguageIsEng } = useContext(LanguageContext)
 
@@ -21,10 +22,10 @@ const Home = () => {
     
     return (
         <>
-            <Grid buttonState={buttonState}/>
+            <Background buttonState={buttonState}/>
             <Container>
                 <MeshContainer>
-                    Mesh Goes Here
+                    <HomeMeshContainer/>
                 </MeshContainer>
                 <InfosContainer>
                     <LanguageSelector/>

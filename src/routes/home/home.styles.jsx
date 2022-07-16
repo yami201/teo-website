@@ -78,7 +78,7 @@ export const Subtitle = styled.div`
     span:last-child{
         width: 25vw;
         animation: ${typeAnimation} 2s 2.5s steps(40,end) forwards,
-                ${blink} 0.6s 4.5s linear infinite;
+                ${blink} 1s 4.5s linear infinite;
     }
 `
 export const Paragraph = styled.p`
