@@ -36,7 +36,7 @@ const Home = () => {
                     <Button
                         onMouseOver={buttonHoveredHandler}
                         onMouseOut={buttonUnHoveredHandler}>
-                        {currentLanguageIsEng ? 'discover':'décourvrir'}
+                        {currentLanguageIsEng ? 'discover':'découvrir'}
                     </Button>
                     <Paragraph>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi, perspiciatis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, laudantium?</Paragraph>
                 </InfosContainer>
