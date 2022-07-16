@@ -20,6 +20,7 @@ export const ButtonWrapper = styled.button`
     border: 1px solid yellow;
     background-color: black;
     z-index: 0;
+    
     &:hover{
         letter-spacing: 2px;
     }

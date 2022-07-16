@@ -1,4 +1,4 @@
-import { useState, useCallback, useContext } from "react";
+import { useState, useCallback, useContext} from "react";
 import {
     Container,
     MeshContainer,
@@ -6,18 +6,13 @@ import {
     Name,
     Subtitle,
     Paragraph,
-    LanguageSelectorContainer,
-    LanguageSelector,
 } from "./home.styles";
 import { LanguageContext } from "../../language.context";
 import Grid from "../../components/grid/grid.component";
 import Button from "../../components/button/button.component";
-
+import LanguageSelector from "../../components/languague-selector/language-selector.component";
 const Home = () => {
-    const { currentLanguageIsEng,setCurrentLanguageIsEng } = useContext(LanguageContext)
-    console.log(currentLanguageIsEng)
-    const enHandler = useCallback(() => setCurrentLanguageIsEng(true),[])
-    const frHandler = useCallback(() => setCurrentLanguageIsEng(false),[])
+    const { currentLanguageIsEng } = useContext(LanguageContext)
 
     const [buttonState,setButtonState] = useState(false)
     const buttonHoveredHandler = useCallback(() => setButtonState(true),[])
@@ -32,19 +27,12 @@ const Home = () => {
                     Mesh Goes Here
                 </MeshContainer>
                 <InfosContainer>
-                    <LanguageSelectorContainer>
-                        <LanguageSelector
-                            onClick={enHandler}
-                            selected={currentLanguageIsEng}
-                        >EN</LanguageSelector>
-                        <span>|</span>
-                        <LanguageSelector
-                            onClick={frHandler}
-                            selected={!currentLanguageIsEng}
-                        >FR</LanguageSelector>
-                    </LanguageSelectorContainer>
+                    <LanguageSelector/>
                     <Name>teo</Name>
-                    <Subtitle>Lorem ipsum dolor sit,</Subtitle>
+                    <Subtitle>
+                        <span>Lorem ipsum</span>
+                        <span> dolor sit,</span>
+                    </Subtitle>
                     <Button
                         onMouseOver={buttonHoveredHandler}
                         onMouseOut={buttonUnHoveredHandler}>
