@@ -10,6 +10,11 @@ export const LanguageSelectorContainer = styled.div`
     span{
         transform: translateY(-2px);
     }
+    @media screen and (max-width:850px){
+        position: absolute;
+        top: 40px;
+        right: 30px;
+    }
 `
 export const Selector = styled.button`
     background-color: unset;

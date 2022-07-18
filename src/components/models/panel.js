@@ -23,6 +23,11 @@ const Panel = () => {
     transparent:true,
     opacity: 0.2,
   })
+  const panelSmallBarsMaterial = new MeshBasicMaterial({
+    color: 'white',
+    transparent:true,
+    opacity: 0.6,
+  })
   useFrame(({clock : { elapsedTime}}) => 
     ref.current.position.y = Math.sin(elapsedTime * 2) * 0.05)
   window.addEventListener('mousemove',({clientX,clientY}) => {
@@ -38,7 +43,9 @@ const Panel = () => {
     <group rotation={[panelRotation.x,panelRotation.y,panelRotation.z]} scale={[1.2,1.2,1.2]} ref={ref}>
       <mesh geometry={result.nodes.frame.geometry} material={frameMaterial}/>
       <mesh geometry={result.nodes.panelBack.geometry} material={panelMaterial}/>
-      <mesh geometry={result.nodes.panel.geometry} material={panelBarsMaterial}/>
+      <mesh geometry={result.nodes.panelCells.geometry} material={panelBarsMaterial}/>
+      <mesh geometry={result.nodes.panelSmallBars.geometry} material={panelSmallBarsMaterial} />
+      <mesh geometry={result.nodes.panelBarrs.geometry} material={panelBarsMaterial}/>
     </group>
   )
 }

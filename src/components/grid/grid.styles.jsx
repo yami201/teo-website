@@ -35,6 +35,11 @@ const lineStyle = (vertical) => {
         background-color: white;
         opacity: 0.1;
         transition: 700ms;
+        position: absolute;
+        font-size: 26px;
+        @media screen and (max-width: 1150px){
+            font-size: 20px;
+        }
     `
 }
 export const GridContainer = styled.div`
@@ -46,10 +51,59 @@ export const GridContainer = styled.div`
 `
 export const VerticalLine = styled.span`
     ${lineStyle(true)}
+
+    @media screen and (min-width: 850px){
+        &:first-child{
+            right: 10vw;
+        }
+        &:nth-child(2){
+            right: 36.6vw;
+        }
+        &:nth-child(3){
+            right: 63.2vw;
+        }
+        &:last-child{
+            right: 90vw;
+        }
+    };
+    @media screen and (max-width: 850px){
+        &:first-child{
+            right: 15vw;
+        }
+        &:nth-child(2){
+            right: 50vw;
+        }
+        &:last-child{
+            right: 85vw;
+        }
+    };
 `
 export const HorizentalLine = styled.span`
     ${lineStyle(false)}
 
+    @media screen and (min-width: 850px){
+        &:first-child{
+            top: 25vh;
+        }
+        &:last-child{
+            top: 75vh;
+        }
+
+    };
+    @media screen and (max-width: 850px){
+        &:first-child{
+            top: 10vh;
+        }
+        &:nth-child(2){
+            top: 36.6vh;
+        }
+        &:nth-child(3){
+            top: 63.2vh;
+        }
+        &:last-child{
+            top: 90vh;
+        }
+    };
 `
 export const HorizentalLinesContainer = styled.div`
     height: 100%;
@@ -65,17 +119,16 @@ export const HorizentalLinesContainer = styled.div`
                 `
                     ${HorizentalLine}:first-child{
                         opacity:0.5;
-                        transform:translateY(28.6vh)
+                        top:calc(60vh - 0.2vh);
                     }
                     ${HorizentalLine}:last-child{
                         opacity:0.5;
-                        transform:translateY(-14vh)
+                        top:calc(calc(60vh + 0.1vh) + 2.5em);
                     }
                 `
             )
         }
     }}
-
 `
 export const VerticalLinesContainer = styled.div`
     position: absolute;
@@ -85,19 +138,38 @@ export const VerticalLinesContainer = styled.div`
     justify-content: space-around;
     transform: scaleY(0);
     animation: ${showVerticalGrid} 4s ease forwards;
-    ${({state}) => {
-        if(state){
-            return  (
-                `${VerticalLine}:nth-child(3){
-                    opacity:0.5;
-                    transform: translateX(-5.6vw);
-                }
-                ${VerticalLine}:nth-child(4){
-                    opacity:0.5;
-                    transform: translateX(-10.4vw);
-                }`
-            )
-        }
-        
-    }}
+    @media screen and (min-width:850px){
+        ${({state}) => {
+            if(state){
+                return  (
+                    `${VerticalLine}:nth-child(2){
+                        opacity:0.5;
+                        right:calc(calc(27vw + 0.1vw) + 8em)
+                    }
+                    ${VerticalLine}:first-child{
+                        opacity:0.5;
+                        right: calc(27vw - 0.1vw);
+                    }`
+                )
+            }
+            
+        }}
+    }
+    @media screen and (max-width:850px){
+        ${({state}) => {
+            if(state){
+                return  (
+                    `${VerticalLine}:nth-child(2){
+                        opacity:0.5;
+                        right:calc(calc(10vw + 0.1vw) + 8em)
+                    }
+                    ${VerticalLine}:first-child{
+                        opacity:0.5;
+                        right: calc(10vw - 0.1vw);
+                    }`
+                )
+            }
+            
+        }}
+    }
 `

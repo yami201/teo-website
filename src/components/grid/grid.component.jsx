@@ -8,7 +8,11 @@ import {
 } from "./grid.styles"; 
 import { Canvas } from "@react-three/fiber";
 import { Stars } from "@react-three/drei";
+import { useState } from "react";
 const Background =  ({ buttonState } ) => {
+    const [windowWidth,setWindowWidth] = useState(window.innerWidth)
+
+    window.addEventListener('resize' , () => setWindowWidth(window.innerWidth))
     return (
         <>
             <GridContainer>
@@ -21,12 +25,18 @@ const Background =  ({ buttonState } ) => {
                     <VerticalLine></VerticalLine>
                     <VerticalLine></VerticalLine>
                     <VerticalLine></VerticalLine>
-                    <VerticalLine></VerticalLine>
+                    {window.innerWidth >850 && <VerticalLine></VerticalLine>}
                 </VerticalLinesContainer>
 
                 <HorizentalLinesContainer state={buttonState}>
                     <HorizentalLine></HorizentalLine>
                     <HorizentalLine></HorizentalLine>
+                    {window.innerWidth <=850 
+                    && 
+                        <>
+                            <HorizentalLine></HorizentalLine>
+                            <HorizentalLine></HorizentalLine> 
+                        </>}
                 </HorizentalLinesContainer>
             </GridContainer>
         </>

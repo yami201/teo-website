@@ -3,7 +3,7 @@ import {
     Container,
     MeshContainer,
     InfosContainer,
-    Name,
+    LogoContainer,
     Subtitle,
     Paragraph,
 } from "./home.styles";
@@ -29,19 +29,19 @@ const Home = () => {
                 </MeshContainer>
                 <InfosContainer>
                     <LanguageSelector/>
-                    <Name>teo</Name>
+                    <LogoContainer>teo</LogoContainer>
                     <Subtitle>
                         <span>Lorem ipsum</span>
                         <span> dolor sit,</span>
                     </Subtitle>
-                    <Button
-                        onMouseOver={buttonHoveredHandler}
-                        onMouseOut={buttonUnHoveredHandler}>
-                        {currentLanguageIsEng ? 'discover':'découvrir'}
-                    </Button>
                     <Paragraph>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi, perspiciatis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, laudantium?</Paragraph>
                 </InfosContainer>
             </Container>
+            <Button
+                        onMouseOver={buttonHoveredHandler}
+                        onMouseOut={buttonUnHoveredHandler}>
+                        {currentLanguageIsEng ? 'discover':'découvrir'}
+            </Button>
         </>
     )
 }
