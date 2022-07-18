@@ -113,22 +113,42 @@ export const HorizentalLinesContainer = styled.div`
     justify-content: space-around;
     transform: scaleX(0);
     animation: ${showHorizentalGrid} 4s ease forwards;
-    ${({state}) => {
-        if(state){
-            return(
-                `
-                    ${HorizentalLine}:first-child{
-                        opacity:0.5;
-                        top:calc(60vh - 0.2vh);
-                    }
-                    ${HorizentalLine}:last-child{
-                        opacity:0.5;
-                        top:calc(calc(60vh + 0.1vh) + 2.5em);
-                    }
-                `
-            )
-        }
-    }}
+    @media screen and (min-width: 850px){
+        ${({state}) => {
+            if(state){
+                return(
+                    `
+                        ${HorizentalLine}:first-child{
+                            opacity:0.5;
+                            top:calc(60vh - 0.2vh);
+                        }
+                        ${HorizentalLine}:last-child{
+                            opacity:0.5;
+                            top:calc(calc(60vh + 0.1vh) + 2.5em);
+                        }
+                    `
+                )
+            }
+        }}
+    }
+    @media screen and (max-width:850px){
+        ${({state}) => {
+            if(state){
+                return(
+                    `
+                        ${HorizentalLine}:nth-child(2){
+                            opacity:0.5;
+                            top:calc(60vh - 0.2vh);
+                        }
+                        ${HorizentalLine}:nth-child(3){
+                            opacity:0.5;
+                            top:calc(calc(60vh + 0.1vh) + 2.5em);
+                        }
+                    `
+                )
+            }
+        }}
+    }
 `
 export const VerticalLinesContainer = styled.div`
     position: absolute;
